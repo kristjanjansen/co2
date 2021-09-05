@@ -12,7 +12,7 @@ export default defineConfig({
         families: [
           {
             name: "Montserrat",
-            styles: "ital,wght@0,300;0,600;1,300;1,600",
+            styles: "ital,wght@0,300;0,400;0,600;1,300;1,400;1,600",
           },
           {
             name: "Inter",
