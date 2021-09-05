@@ -1,9 +1,14 @@
 module.exports = {
   mode: "jit",
-  purge: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  purge: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "public/**/*.svg"],
   darkMode: false,
   theme: {
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+      title: ["Montserrat", "sans-serif"],
+    },
     colors: {
+      white: "#ffffff",
       gray: {
         50: "#fcfcfd",
         100: "#f6f7f8",

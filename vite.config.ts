@@ -1,7 +1,23 @@
-import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
+import { defineConfig } from "vite";
+import reactRefresh from "@vitejs/plugin-react-refresh";
+import viteFonts from "vite-plugin-fonts";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh()]
-})
+  plugins: [
+    reactRefresh(),
+    viteFonts({
+      google: {
+        families: [
+          {
+            name: "Montserrat",
+            styles: "ital,wght@0,300;0,600;1,300;1,600",
+          },
+          {
+            name: "Inter",
+            styles: "wght@400;600",
+          },
+        ],
+      },
+    }),
+  ],
+});
