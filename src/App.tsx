@@ -1,16 +1,23 @@
 import React from "react";
+import { ReactComponent as Logo } from "./components/logo.svg";
+import { ReactComponent as Dashboard } from "./components/dashboard.svg";
+import { ReactComponent as Transports } from "./components/transports.svg";
+import { ReactComponent as Network } from "./components/network.svg";
+import { ReactComponent as Places } from "./components/places.svg";
+import { ReactComponent as Connected } from "./components/connected.svg";
+import { ReactComponent as Settings } from "./components/settings.svg";
 
 export default function App() {
   return (
     <div className="grid grid-cols-[auto,1fr] min-h-screen">
       <div className="w-16 bg-gradient-to-b from-sky-500 to-sky-600 grid justify-center content-start gap-9 py-6">
-        <img src="/logo.svg" className="w-6" />
-        <img src="/dashboard.svg" className="w-6 text-white" />
-        <img src="/transports.svg" className="w-6 text-white" />
-        <img src="/network.svg" className="w-6 text-white" />
-        <img src="/places.svg" className="w-6 text-white" />
-        <img src="/connected.svg" className="w-6 text-white" />
-        <img src="/settings.svg" className="w-6 text-white" />
+        <Logo className="w-6" />
+        <Dashboard className="stroke-current w-6 text-white" />
+        <Transports className="w-6 text-white" />
+        <Network className="w-6 text-white" />
+        <Places className="w-6 text-white" />
+        <Connected className="w-6 text-white" />
+        <Settings className="w-6 text-white" />
       </div>
       <div className="p-8">
         <h1 className="p-0 m-0 text-6xl font-light font-title">

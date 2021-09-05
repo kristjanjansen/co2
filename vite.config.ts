@@ -1,9 +1,11 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
+import svgrPlugin from "vite-plugin-svgr";
 import viteFonts from "vite-plugin-fonts";
 
 export default defineConfig({
   plugins: [
+    svgrPlugin(),
     reactRefresh(),
     viteFonts({
       google: {
