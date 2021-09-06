@@ -43,8 +43,8 @@ export default function App() {
         <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
           <Settings className="stroke-current w-6 text-white" />
         </div>
-        <div className="group w-11 h-11 bg-white hover:bg-sky-100 rounded-[42%] grid place-items-center transition-colors">
-          <Leaf className="stroke-current w-6 text-blue-500 group-hover:text-blue-400" />
+        <div className="group w-11 h-11 bg-white rounded-[42%] grid place-items-center transition-colors">
+          <Leaf className="stroke-current w-6 text-blue-500 group-hover:text-blue-600" />
         </div>
       </div>
       <div className="p-8">
