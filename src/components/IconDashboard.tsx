@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-export default function (props: SVGProps<SVGSVGElement>) {
+export function IconDashboard(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 25 25"

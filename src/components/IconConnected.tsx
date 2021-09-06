@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-export default function (props: SVGProps<SVGSVGElement>) {
+export function IconConnected(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="24"

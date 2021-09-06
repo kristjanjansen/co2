@@ -1,13 +1,13 @@
 import React from "react";
 
-import IconConnected from "./components/IconConnected";
-import IconDashboard from "./components/IconDashboard";
-import IconLeaf from "./components/IconLeaf";
-import IconNetwork from "./components/IconNetwork";
-import IconPlaces from "./components/IconPlaces";
-import IconSettings from "./components/IconSettings";
-import IconTransports from "./components/IconTransports";
-import Logo from "./components/Logo";
+import { IconConnected } from "./components/IconConnected";
+import { IconDashboard } from "./components/IconDashboard";
+import { IconLeaf } from "./components/IconLeaf";
+import { IconNetwork } from "./components/IconNetwork";
+import { IconPlaces } from "./components/IconPlaces";
+import { IconSettings } from "./components/IconSettings";
+import { IconTransports } from "./components/IconTransports";
+import { Logo } from "./components/Logo";
 
 export default function App() {
   return (
