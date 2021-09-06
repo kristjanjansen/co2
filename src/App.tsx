@@ -1,24 +1,13 @@
 import React from "react";
-import { ReactComponent as Logo } from "./components/logo.svg";
-import { ReactComponent as Dashboard } from "./components/dashboard.svg";
-import { ReactComponent as Transports } from "./components/transports.svg";
-import { ReactComponent as Network } from "./components/network.svg";
-import { ReactComponent as Places } from "./components/places.svg";
-import { ReactComponent as Connected } from "./components/connected.svg";
-import { ReactComponent as Settings } from "./components/settings.svg";
-import { ReactComponent as Leaf } from "./components/Leaf.svg";
 
-import { SVGProps } from "react";
-export function MdiLeaf(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}>
-      <path
-        d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"
-        fill="currentColor"
-      ></path>
-    </svg>
-  );
-}
+import IconConnected from "./components/IconConnected";
+import IconDashboard from "./components/IconDashboard";
+import IconLeaf from "./components/IconLeaf";
+import IconNetwork from "./components/IconNetwork";
+import IconPlaces from "./components/IconPlaces";
+import IconSettings from "./components/IconSettings";
+import IconTransports from "./components/IconTransports";
+import Logo from "./components/Logo";
 
 export default function App() {
   return (
@@ -27,25 +16,25 @@ export default function App() {
         <div className="h-screen sticky top-0 bg-gradient-to-b from-sky-500 to-sky-600 grid justify-center content-start gap-4 py-8">
           <Logo className="w-7 justify-self-center" />
           <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <Dashboard className="stroke-current w-6 text-white" />
+            <IconDashboard className="w-6 text-white" />
           </div>
           <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <Transports className="stroke-current w-6 text-white" />
+            <IconTransports className=" w-6 text-white" />
           </div>
           <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <Network className="stroke-current w-6 text-white" />
+            <IconNetwork className=" w-6 text-white" />
           </div>
           <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <Places className="stroke-current w-6 text-white" />
+            <IconPlaces className=" w-6 text-white" />
           </div>
           <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <Connected className="stroke-current w-6 text-white" />
+            <IconConnected className=" w-6 text-white" />
           </div>
           <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <Settings className="stroke-current w-6 text-white" />
+            <IconSettings className=" w-6 text-white" />
           </div>
           <div className="group w-11 h-11 bg-white rounded-[42%] grid place-items-center transition-colors">
-            <Leaf className="stroke-current w-6 text-green-500 group-hover:text-blue-600" />
+            <IconLeaf className=" w-6 text-green-500 group-hover:text-blue-600" />
           </div>
         </div>
       </div>
