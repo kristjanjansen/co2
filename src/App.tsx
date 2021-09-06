@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "./components/Button";
 
 import { IconConnected } from "./components/IconConnected";
 import { IconDashboard } from "./components/IconDashboard";
@@ -80,9 +81,9 @@ export default function App() {
           Only admins can create places.
         </div>
         <div>
-          <button className="round inline-flex relative justify-center items-center py-2 px-4 text-sm font-medium text-center text-white align-middle whitespace-pre bg-blue-500 hover:bg-blue-600 transition-colors rounded border border-transparent border-solid cursor-pointer">
-            Create a saved filter
-          </button>
+          <Button className="bg-green-500 hover:bg-green-600">
+            Create a saved filter!
+          </Button>
         </div>
         <p className="py-4 px-3 my-4 mx-0 text-sm leading-6 text-blue-900 bg-orange-100 rounded border border-gray-300 border-solid shadow-sm">
           This carrier has set up its GPS (telematics provider) and is ready to
