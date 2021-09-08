@@ -11,7 +11,7 @@ export function Tabs() {
   ];
   return (
     <div className="flex border-gray-200 border-b">
-      {tabs.map(({ title, to }) => (
+      {tabs.map(({ title, to }, i) => (
         <NavLink
           end
           className={({ isActive }) =>
@@ -21,6 +21,7 @@ export function Tabs() {
             )
           }
           to={to}
+          key={i}
         >
           {title}
         </NavLink>

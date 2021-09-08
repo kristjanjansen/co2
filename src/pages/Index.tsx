@@ -6,7 +6,7 @@ import { Title } from "../components/Title";
 export function Index() {
   return (
     <>
-      <Title>CO₂</Title>
+      <Title>Suggestions</Title>
       <Box className="grid gap-y-1">
         <Heading>Test heading</Heading>
         <p className="text-sm">Test paragraph</p>
