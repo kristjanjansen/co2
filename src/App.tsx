@@ -11,15 +11,26 @@ import { IconSettings } from "./components/IconSettings";
 import { IconTransports } from "./components/IconTransports";
 import { Logo } from "./components/Logo";
 
-import * as Plot from "@observablehq/plot";
-import { autoType } from "d3-dsv";
-import { PlotGraph } from "./components/PlotGraph";
+import { Routes, Route, Link } from "react-router-dom";
 
-const parse = (obj: any) =>
-  Object.fromEntries(
-    Object.entries(obj).map(([key, value]) => [key, autoType({ value }).value])
+import { Layout } from "./components/Layout";
+
+import { Index } from "./pages/Index";
+import { Data } from "./pages/Data";
+import { Styles } from "./pages/Styles";
+
+export function App() {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/data" element={<Data />} />
+        <Route path="/styles" element={<Styles />} />
+      </Routes>
+    </Layout>
   );
-
+}
+/*
 export function App() {
   const {
     data: sheetsData,
@@ -73,36 +84,14 @@ export function App() {
     </div>
   );
 }
+*/
 
 /*
 export default function App() {
   return (
     <div className="grid grid-cols-[auto,1fr] min-h-screen">
       <div className="w-16">
-        <div className="h-screen sticky top-0 bg-gradient-to-b from-sky-500 to-sky-600 grid justify-center content-start gap-4 py-8">
-          <Logo className="w-7 justify-self-center" />
-          <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <IconDashboard className="w-6 text-white" />
-          </div>
-          <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <IconTransports className=" w-6 text-white" />
-          </div>
-          <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <IconNetwork className=" w-6 text-white" />
-          </div>
-          <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <IconPlaces className=" w-6 text-white" />
-          </div>
-          <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <IconConnected className=" w-6 text-white" />
-          </div>
-          <div className="w-11 h-11 hover:bg-sky-400 rounded-[42%] grid place-items-center transition-colors">
-            <IconSettings className=" w-6 text-white" />
-          </div>
-          <div className="group w-11 h-11 bg-white rounded-[42%] grid place-items-center transition-colors">
-            <IconLeaf className=" w-6 text-green-500 group-hover:text-blue-600" />
-          </div>
-        </div>
+     
       </div>
       <div className="p-8 grid gap-y-6">
         <h1 className="text-6xl font-light font-title">Real-time visibility</h1>

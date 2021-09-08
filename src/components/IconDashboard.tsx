@@ -9,9 +9,9 @@ export function IconDashboard(props: SVGProps<SVGSVGElement>) {
     >
       <g
         fill="none"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path d="M5.25.755a4.5 4.5 0 110 9 4.5 4.5 0 010-9zM5.25 14.255a4.5 4.5 0 110 9 4.5 4.5 0 010-9zM18.75.755a4.5 4.5 0 110 9 4.5 4.5 0 010-9zM18.75 14.255a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"></path>
       </g>
