@@ -7,6 +7,7 @@ export function Tabs() {
     { title: "Index", to: "/" },
     { title: "Data", to: "/data" },
     { title: "Styles", to: "/styles" },
+    { title: "Embed", to: "/embed" },
   ];
   return (
     <div className="flex border-gray-200 border-b">
@@ -15,7 +16,7 @@ export function Tabs() {
           end
           className={({ isActive }) =>
             merge(
-              "px-3 py-2 border-b-2 border-white text-sm font-semibold text-gray-600 hover:text-gray-900 hover:underline",
+              "px-3 py-2 border-b-[3px] border-white text-sm font-semibold text-gray-600 hover:text-gray-900 hover:underline",
               isActive ? "border-blue-500 text-gray-900" : ""
             )
           }

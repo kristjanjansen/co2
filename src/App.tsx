@@ -18,6 +18,7 @@ import { Layout } from "./components/Layout";
 import { Index } from "./pages/Index";
 import { Data } from "./pages/Data";
 import { Styles } from "./pages/Styles";
+import { Embed } from "./pages/Embed";
 
 export function App() {
   return (
@@ -26,6 +27,7 @@ export function App() {
         <Route path="/" element={<Index />} />
         <Route path="/data" element={<Data />} />
         <Route path="/styles" element={<Styles />} />
+        <Route path="/embed" element={<Embed />} />
       </Routes>
     </Layout>
   );
