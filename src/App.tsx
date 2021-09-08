@@ -1,4 +1,5 @@
 import React from "react";
+import useGoogleSheets from "use-google-sheets";
 import { Button } from "./components/Button";
 
 import { IconConnected } from "./components/IconConnected";
@@ -10,6 +11,24 @@ import { IconSettings } from "./components/IconSettings";
 import { IconTransports } from "./components/IconTransports";
 import { Logo } from "./components/Logo";
 
+export function App() {
+  const { data, loading, error } = useGoogleSheets({
+    apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+    sheetId: import.meta.env.VITE_GOOGLE_SHEETS_ID,
+  });
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{JSON.stringify(error)}</div>;
+  }
+
+  return <pre>{JSON.stringify(data)}</pre>;
+}
+
+/*
 export default function App() {
   return (
     <div className="grid grid-cols-[auto,1fr] min-h-screen">
@@ -107,3 +126,4 @@ export default function App() {
     </div>
   );
 }
+*/
