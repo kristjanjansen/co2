@@ -1,27 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { mergeClassLists as merge } from "tailwind-classlist";
 
 export function Tabs() {
+  const tabs = [
+    { title: "Index", to: "/" },
+    { title: "Data", to: "/data" },
+    { title: "Styles", to: "/styles" },
+  ];
   return (
-    <div className="flex">
-      <Link
-        className="text-sm h-4 order-blue-500 px-2 font-semibold text-gray-600 no-underline cursor-pointer hover:text-gray-900 hover:underline"
-        to="/"
-      >
-        Page1
-      </Link>
-      <Link
-        className="text-sm h-4 order-blue-500 px-2 font-semibold text-gray-600 no-underline cursor-pointer hover:text-gray-900 hover:underline"
-        to="/data"
-      >
-        Page2
-      </Link>
-      <Link
-        className="text-sm h-4 order-blue-500 px-2 font-semibold text-gray-600 no-underline cursor-pointer hover:text-gray-900 hover:underline"
-        to="/styles"
-      >
-        Page3
-      </Link>
+    <div className="flex border-gray-200 border-b">
+      {tabs.map(({ title, to }) => (
+        <NavLink
+          end
+          className={({ isActive }) =>
+            merge(
+              "px-3 py-2 border-b-2 border-white text-sm font-semibold text-gray-600 hover:text-gray-900 hover:underline",
+              isActive ? "border-blue-500 text-gray-900" : ""
+            )
+          }
+          to={to}
+        >
+          {title}
+        </NavLink>
+      ))}
     </div>
   );
 }
