@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useGoogleSheets from "use-google-sheets";
 import { Button } from "./components/Button";
 
@@ -11,8 +11,21 @@ import { IconSettings } from "./components/IconSettings";
 import { IconTransports } from "./components/IconTransports";
 import { Logo } from "./components/Logo";
 
+import * as Plot from "@observablehq/plot";
+import { autoType } from "d3-dsv";
+import { PlotGraph } from "./components/PlotGraph";
+
+const parse = (obj: any) =>
+  Object.fromEntries(
+    Object.entries(obj).map(([key, value]) => [key, autoType({ value }).value])
+  );
+
 export function App() {
-  const { data, loading, error } = useGoogleSheets({
+  const {
+    data: sheetsData,
+    loading,
+    error,
+  } = useGoogleSheets({
     apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
     sheetId: import.meta.env.VITE_GOOGLE_SHEETS_ID,
   });
@@ -25,7 +38,40 @@ export function App() {
     return <div>{JSON.stringify(error)}</div>;
   }
 
-  return <pre>{JSON.stringify(data)}</pre>;
+  let data: any[] = [];
+
+  if (sheetsData) {
+    data = sheetsData[0].data.map(parse as any);
+  }
+
+  const plot = {
+    y: {
+      grid: true,
+    },
+    marks: [
+      Plot.line(data, {
+        x: "date",
+        y: "current",
+        sort: "date",
+        stroke: "orange",
+        strokeWidth: 3,
+      }),
+      Plot.line(data, {
+        x: "date",
+        y: "estimated",
+        sort: "date",
+        stroke: "royalblue",
+        strokeWidth: 3,
+      }),
+      Plot.ruleY([50], { stroke: "red" }),
+    ],
+  };
+
+  return (
+    <div>
+      <PlotGraph options={plot} />
+    </div>
+  );
 }
 
 /*
