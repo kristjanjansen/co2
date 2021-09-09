@@ -4,10 +4,8 @@ import { mergeClassLists as merge } from "tailwind-classlist";
 
 export function Tabs() {
   const tabs = [
-    { title: "Index", to: "/" },
-    { title: "Graphs", to: "/data" },
-    { title: "Transports", to: "/table" },
-    { title: "(GDS embed)", to: "/embed" },
+    { title: "Dashboard", to: "/" },
+    { title: "Transports", to: "/transports" },
   ];
   return (
     <div className="flex border-gray-200 border-b">

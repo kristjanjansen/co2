@@ -7,14 +7,8 @@ export function LinkExternal(props: {
   className?: string;
 }) {
   return (
-    <a href={props.to} target="_blank">
+    <a className={props.className || ""} href={props.to} target="_blank">
       {props.children}
     </a>
   );
 }
-
-/*
-className={merge(
-        "text-sm text-gray-500 hover:text-blue-500",
-        props.className || ""
-      )}*/

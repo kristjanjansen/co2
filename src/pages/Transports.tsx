@@ -7,16 +7,12 @@ import { Sidebar } from "../components/Sidebar";
 import { Spinner } from "../components/Spinner";
 import { useData } from "../utils";
 
-export function Table() {
+export function Transports() {
   const { data, loading, error } = useData("knauf-insulation");
 
-  const columns = useMemo(
-    () =>
-      data
-        ? Object.keys(data[0]).map((key) => ({ Header: key, accessor: key }))
-        : [],
-    []
-  );
+  const columns = data
+    ? Object.keys(data[0]).map((key) => ({ Header: key, accessor: key }))
+    : [];
 
   const [rowIndex, setRowIndex] = useState(-1);
 
