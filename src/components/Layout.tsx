@@ -10,11 +10,16 @@ export function Layout(props: { children: any }) {
         <Nav />
       </div>
       <div>
-        <div className="p-4 p-b-0 flex justify-between">
+        <div className="p-4 p-b-0 flex justify-between align-baseline">
           <Title>
             CO<sub>2</sub> dashboard
           </Title>
-          <p className="text-sm">{import.meta.env.VITE_CLIENT_IMG || ""}</p>
+          {import.meta.env.VITE_CLIENT_IMG && (
+            <img
+              className="block h-8"
+              src={String(import.meta.env.VITE_CLIENT_IMG) || ""}
+            />
+          )}
         </div>
         <Tabs />
         {props.children}
