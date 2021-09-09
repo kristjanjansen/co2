@@ -4,14 +4,6 @@ import * as Plot from "@observablehq/plot";
 import { PlotGraph } from "../components/PlotGraph";
 import { parseData } from "../utils";
 
-// export function Data() {
-//   return (
-//     <div>
-//       <h2>Data</h2>
-//     </div>
-//   );
-// }
-
 export function Data() {
   const {
     data: sheetsData,
@@ -30,11 +22,8 @@ export function Data() {
     return <div>{JSON.stringify(error)}</div>;
   }
 
-  let data: any[] = [];
-
-  if (sheetsData) {
-    data = sheetsData[0].data.map(parseData);
-  }
+  //@ts-ignore
+  const data = sheetsData.find(({ id }) => id === "data").data.map(parseData);
 
   const plot = {
     y: {
@@ -55,13 +44,22 @@ export function Data() {
         stroke: "royalblue",
         strokeWidth: 3,
       }),
-      Plot.ruleY([50], { stroke: "red" }),
+      //Plot.ruleY([50], { stroke: "red" }),
     ],
   };
 
   return (
-    <div>
+    <>
+      <a
+        href={`https://docs.google.com/spreadsheets/d/${
+          import.meta.env.VITE_GOOGLE_SHEETS_ID
+        }/edit#gid=0`}
+        target="_blank"
+        className="text-sm text-gray-500 hover:text-blue-500"
+      >
+        Google Sheets source →
+      </a>
       <PlotGraph options={plot} />
-    </div>
+    </>
   );
 }
