@@ -9,7 +9,7 @@ export function Index() {
         <div className="h-96 bg-gray-50 grid place-items-center">
           <Title>Place for KPIs / graphs </Title>
         </div>
-        <Suggestions />
+        {/* <Suggestions /> */}
       </div>
     </>
   );

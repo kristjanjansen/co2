@@ -8,7 +8,7 @@ import { Spinner } from "../components/Spinner";
 import { useData } from "../utils";
 
 export function Table() {
-  const { data, loading, error } = useData("data");
+  const { data, loading, error } = useData("knauf-insulation");
 
   const columns = useMemo(
     () =>
@@ -34,7 +34,7 @@ export function Table() {
 
   return (
     <>
-      <div className="p-4 bg-gray-100 flex justify-end">
+      <div className="p-4 bg-gray-100 flex">
         <Button>
           <div className="flex align-top gap-1">
             <IconDownload className="text-gray-800 w-4 h-4 translate-y-[0.1rem]" />
@@ -42,7 +42,7 @@ export function Table() {
           </div>
         </Button>
       </div>
-      <table className="w-full">
+      <table>
         <thead>
           <tr>
             {columns.map((column, i) => (
@@ -55,15 +55,15 @@ export function Table() {
             ))}
           </tr>
         </thead>
-        <tbody>
-          {(data || []).map((row, i) => {
+        <tbody className="">
+          {(data || []).slice(0, 100).map((row, i) => {
             return (
               <tr key={i} onClick={() => setRowIndex(i)} className="group">
                 {Object.values(row).map((cell, i) => {
                   return (
                     <td
                       key={i}
-                      className="px-4 py-2 text-sm border border-gray-300 group-hover:bg-gray-50 cursor-pointer"
+                      className="whitespace-pre px-4 py-2 text-sm border border-gray-300 group-hover:bg-gray-50 cursor-pointer"
                     >
                       {cell as string}
                     </td>
