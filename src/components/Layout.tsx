@@ -10,7 +10,7 @@ export function Layout(props: { children: any }) {
         <Nav />
       </div>
       <div className="p-5 grid gap-y-6 auto-rows-min">
-        <Title className="text-5xl font-light">
+        <Title>
           CO<sub>2</sub> dashboard
         </Title>
         <Tabs />

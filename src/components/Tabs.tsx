@@ -6,7 +6,7 @@ export function Tabs() {
   const tabs = [
     { title: "Index", to: "/" },
     { title: "GDS embed", to: "/embed" },
-    { title: "Graphs", to: "/data" },
+    { title: "Observable Plot", to: "/data" },
   ];
   return (
     <div className="flex border-gray-200 border-b">

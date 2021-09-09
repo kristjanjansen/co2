@@ -3,6 +3,8 @@ import useGoogleSheets from "use-google-sheets";
 import * as Plot from "@observablehq/plot";
 import { PlotGraph } from "../components/PlotGraph";
 import { parseData } from "../utils";
+import { Spinner } from "../components/Spinner";
+import { LinkExernal } from "../components/LinkExternal";
 
 export function Data() {
   const {
@@ -15,7 +17,7 @@ export function Data() {
   });
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   if (error) {
@@ -50,16 +52,19 @@ export function Data() {
 
   return (
     <>
-      <a
-        href={`https://docs.google.com/spreadsheets/d/${
-          import.meta.env.VITE_GOOGLE_SHEETS_ID
-        }/edit#gid=0`}
-        target="_blank"
-        className="text-sm text-gray-500 hover:text-blue-500"
-      >
-        Google Sheets source →
-      </a>
       <PlotGraph options={plot} />
+      <div className="flex gap-4">
+        <LinkExernal
+          to={`https://docs.google.com/spreadsheets/d/${
+            import.meta.env.VITE_GOOGLE_SHEETS_ID
+          }/edit#gid=0`}
+        >
+          Google Sheets source
+        </LinkExernal>
+        <LinkExernal to="https://observablehq.com/d/c7fe2d92e05173b5">
+          Observable source
+        </LinkExernal>
+      </div>
     </>
   );
 }
