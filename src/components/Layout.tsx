@@ -10,10 +10,11 @@ export function Layout(props: { children: any }) {
         <Nav />
       </div>
       <div>
-        <div className="p-4 p-b-0">
+        <div className="p-4 p-b-0 flex justify-between">
           <Title>
             CO<sub>2</sub> dashboard
           </Title>
+          <p className="text-sm">{import.meta.env.VITE_CLIENT_IMG || ""}</p>
         </div>
         <Tabs />
         {props.children}

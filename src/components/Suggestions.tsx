@@ -3,7 +3,7 @@ import useGoogleSheets from "use-google-sheets";
 import { Box } from "../components/Box";
 import { Heading } from "../components/Heading";
 import { useData } from "../utils";
-import { LinkExernal } from "./LinkExternal";
+import { LinkExternal } from "./LinkExternal";
 import { Spinner } from "./Spinner";
 import { Title } from "./Title";
 
@@ -28,13 +28,13 @@ export function Suggestions() {
             <p className="text-sm">{body}</p>
           </Box>
         ))}
-      <LinkExernal
+      <LinkExternal
         to={`https://docs.google.com/spreadsheets/d/${
           import.meta.env.VITE_GOOGLE_SHEETS_ID
         }/edit#gid=0`}
       >
         Google Sheets source
-      </LinkExernal>
+      </LinkExternal>
     </div>
   );
 }

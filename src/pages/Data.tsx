@@ -4,7 +4,7 @@ import * as Plot from "@observablehq/plot";
 import { PlotGraph } from "../components/PlotGraph";
 import { parseData, useData } from "../utils";
 import { Spinner } from "../components/Spinner";
-import { LinkExernal } from "../components/LinkExternal";
+import { LinkExternal } from "../components/LinkExternal";
 import { Stat } from "../components/Stat";
 
 export function Data() {
@@ -94,13 +94,13 @@ export function Data() {
       <PlotGraph options={totalCO2Kg} />
 
       <div className="flex gap-4">
-        <LinkExernal
+        <LinkExternal
           to={`https://docs.google.com/spreadsheets/d/${
             import.meta.env.VITE_GOOGLE_SHEETS_ID
           }/edit#gid=0`}
         >
           Google Sheets source
-        </LinkExernal>
+        </LinkExternal>
       </div>
     </div>
   );
