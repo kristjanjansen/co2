@@ -1,15 +1,15 @@
 import React from "react";
 import { mergeClassLists as merge } from "tailwind-classlist";
 
-export function Heading(props: { children: any; className?: string }) {
+export function Stat(props: { children: any; className?: string }) {
   return (
-    <h1
+    <div
       className={merge(
-        "font-sans text-lg font-semibold text-left text-gray-800",
+        "font-bold text-3xl tracking-tight",
         props.className || ""
       )}
     >
       {props.children}
-    </h1>
+    </div>
   );
 }

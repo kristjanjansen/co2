@@ -3,14 +3,8 @@ import useGoogleSheets from "use-google-sheets";
 import * as Plot from "@observablehq/plot";
 import { PlotGraph } from "../components/PlotGraph";
 import { parseData } from "../utils";
-
-// export function Data() {
-//   return (
-//     <div>
-//       <h2>Data</h2>
-//     </div>
-//   );
-// }
+import { Spinner } from "../components/Spinner";
+import { LinkExernal } from "../components/LinkExternal";
 
 export function Data() {
   const {
@@ -23,18 +17,15 @@ export function Data() {
   });
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   if (error) {
     return <div>{JSON.stringify(error)}</div>;
   }
 
-  let data: any[] = [];
-
-  if (sheetsData) {
-    data = sheetsData[0].data.map(parseData);
-  }
+  //@ts-ignore
+  const data = sheetsData.find(({ id }) => id === "data").data.map(parseData);
 
   const plot = {
     y: {
@@ -55,13 +46,25 @@ export function Data() {
         stroke: "royalblue",
         strokeWidth: 3,
       }),
-      Plot.ruleY([50], { stroke: "red" }),
+      //Plot.ruleY([50], { stroke: "red" }),
     ],
   };
 
   return (
-    <div>
+    <>
       <PlotGraph options={plot} />
-    </div>
+      <div className="flex gap-4">
+        <LinkExernal
+          to={`https://docs.google.com/spreadsheets/d/${
+            import.meta.env.VITE_GOOGLE_SHEETS_ID
+          }/edit#gid=0`}
+        >
+          Google Sheets source
+        </LinkExernal>
+        <LinkExernal to="https://observablehq.com/d/c7fe2d92e05173b5">
+          Observable source
+        </LinkExernal>
+      </div>
+    </>
   );
 }
