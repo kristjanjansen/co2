@@ -17,7 +17,11 @@ export function Data() {
   });
 
   if (loading) {
-    return <Spinner />;
+    return (
+      <div className="p-4 h-1/2 grid place-items-center">
+        <Spinner />
+      </div>
+    );
   }
 
   if (error) {
@@ -51,7 +55,7 @@ export function Data() {
   };
 
   return (
-    <>
+    <div className="p-4 grid gap-4 auto-rows-min">
       <PlotGraph options={plot} />
       <div className="flex gap-4">
         <LinkExernal
@@ -65,6 +69,6 @@ export function Data() {
           Observable source
         </LinkExernal>
       </div>
-    </>
+    </div>
   );
 }

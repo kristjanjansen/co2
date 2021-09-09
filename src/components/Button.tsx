@@ -5,7 +5,7 @@ export function Button(props: { children: ReactNode; className?: string }) {
   return (
     <button
       className={merge(
-        "round inline-flex relative justify-center items-center py-2 px-4 text-sm font-medium text-center text-white align-middle whitespace-pre bg-blue-500 hover:bg-blue-600 transition-colors rounded border border-transparent border-solid cursor-pointer",
+        "px-2 py-1 bg-white border hover:bg-gray-200 transition-colors border-gray-500 rounded font-semibold text-gray-800 text-sm",
         props.className || ""
       )}
     >
