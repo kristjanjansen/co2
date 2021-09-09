@@ -3,6 +3,7 @@ import { useTable } from "react-table";
 import { Button } from "../components/Button";
 import { IconClose } from "../components/IconClose";
 import { IconDownload } from "../components/IconDownload";
+import { Sidebar } from "../components/Sidebar";
 
 export function Table() {
   const data = useMemo(
@@ -93,14 +94,14 @@ export function Table() {
         </tbody>
       </table>
       {rowIndex > -1 && (
-        <div className="fixed top-0 right-0 bottom-0 w-1/4 bg-white border-l border-gray-200">
-          <div className="p-4 flex justify-between">
+        <Sidebar>
+          <div className="py-2 px-4 flex justify-between border-gray-200 border-b">
             <div className="font-bold text-lg">{data[rowIndex].col1}</div>
             <button onClick={() => setRowIndex(-1)}>
               <IconClose className="w-6 h-6 p-1 hover:bg-gray-200 rounded" />
             </button>
           </div>
-        </div>
+        </Sidebar>
       )}
     </>
   );
