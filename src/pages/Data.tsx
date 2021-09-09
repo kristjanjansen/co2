@@ -2,19 +2,12 @@ import React from "react";
 import useGoogleSheets from "use-google-sheets";
 import * as Plot from "@observablehq/plot";
 import { PlotGraph } from "../components/PlotGraph";
-import { parseData } from "../utils";
+import { parseData, useData } from "../utils";
 import { Spinner } from "../components/Spinner";
 import { LinkExernal } from "../components/LinkExternal";
 
 export function Data() {
-  const {
-    data: sheetsData,
-    loading,
-    error,
-  } = useGoogleSheets({
-    apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
-    sheetId: import.meta.env.VITE_GOOGLE_SHEETS_ID,
-  });
+  const { data, loading, error } = useData("data");
 
   if (loading) {
     return (
@@ -27,9 +20,6 @@ export function Data() {
   if (error) {
     return <div>{JSON.stringify(error)}</div>;
   }
-
-  //@ts-ignore
-  const data = sheetsData.find(({ id }) => id === "data").data.map(parseData);
 
   const plot = {
     y: {
