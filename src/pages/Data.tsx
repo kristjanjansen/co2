@@ -69,7 +69,8 @@ export function Data() {
     marks: [
       Plot.line(data, {
         x: (d) => new Date(`${d.Year}-01-01`),
-        y: (d) => d.total_co2_kg,
+        y: (d) => parseFloat(String(d.total_co2_kg).replace(",", "")),
+
         strokeWidth: 3,
       }),
     ],
@@ -99,9 +100,6 @@ export function Data() {
           }/edit#gid=0`}
         >
           Google Sheets source
-        </LinkExernal>
-        <LinkExernal to="https://observablehq.com/d/c7fe2d92e05173b5">
-          Observable source
         </LinkExernal>
       </div>
     </div>
