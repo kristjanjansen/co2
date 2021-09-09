@@ -18,6 +18,7 @@ import { Layout } from "./components/Layout";
 import { Index } from "./pages/Index";
 import { Data } from "./pages/Data";
 import { Transports } from "./pages/Transports";
+import Table from "./pages/Table";
 
 // import { Styles } from "./pages/Styles";
 // import { Embed } from "./pages/Embed";
@@ -31,6 +32,7 @@ export function App() {
         {/* <Route path="/embed" element={<Embed />} /> */}
         <Route path="/transports" element={<Transports />} />
         <Route path="/graphs" element={<Data />} />
+        <Route path="/table" element={<Table />} />
       </Routes>
     </Layout>
   );
