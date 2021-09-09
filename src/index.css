@@ -5,3 +5,6 @@
 .MuiDataGrid-iconSeparator {
   display: none !important;
 }
+.MuiDataGrid-cell:focus {
+  outline: none !important;
+}

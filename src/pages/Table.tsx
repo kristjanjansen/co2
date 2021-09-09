@@ -3,34 +3,40 @@ import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 
 const headerClassName =
   "border border-t-2 border-b-2 border-gray-300 bg-gray-100 p-0 font-semibold text-left  text-gray-700 uppercase cursor-pointer whitespace-no-wrap text-[10px]";
+const cellClassName =
+  "whitespace-pre px-4 py-2 border-r border-gray-300 text-sm  cursor-pointer";
 const columns: GridColDef[] = [
   {
     field: "id",
     headerName: "ID",
     headerClassName,
-    width: 130,
+    cellClassName,
+    width: 200,
   },
   {
     field: "firstName",
     headerName: "First name",
     headerClassName,
-    width: 130,
+    cellClassName,
+    width: 200,
   },
   {
     field: "lastName",
     headerName: "Last name",
     headerClassName,
-    width: 130,
+    cellClassName,
+    width: 200,
   },
   {
     field: "age",
     headerName: "Age",
     type: "number",
     headerClassName,
+    cellClassName,
     renderCell: (cell) => (
       <div className="bg-blue-500 w-full">{cell.value}</div>
     ),
-    width: 130,
+    width: 200,
   },
 ];
 
