@@ -9,10 +9,12 @@ export function Layout(props: { children: any }) {
       <div className="w-16">
         <Nav />
       </div>
-      <div className="p-5 grid gap-y-6 auto-rows-min">
-        <Title>
-          CO<sub>2</sub> dashboard
-        </Title>
+      <div>
+        <div className="p-4 p-b-0">
+          <Title>
+            CO<sub>2</sub> dashboard
+          </Title>
+        </div>
         <Tabs />
         {props.children}
       </div>
