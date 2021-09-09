@@ -14,14 +14,17 @@ export function Index() {
     {
       url: "VITE_BM_URL_MGMT",
       title: "Management summary",
+      src: "/mgmt.png",
     },
     {
       url: "VITE_BM_URL_EMISSIONS",
       title: "Emissions",
+      src: "/emissions.png",
     },
     {
       url: "VITE_BM_URL_MODE",
-      title: "Vehicle type",
+      title: "Vehicle type shift",
+      src: "/shift.png",
     },
   ].map((l) => {
     l.url = import.meta.env[l.url] as string;
@@ -32,11 +35,11 @@ export function Index() {
     <div className="p-4">
       <div className="grid grid-cols-3 gap-3">
         {links.map((link, i) => (
-          <LinkExternal key={i} to={link.url}>
-            <Box>
-              <div className="bg-gray-200 h-24" />
+          <LinkExternal key={i} to={link.url} className="block">
+            <Box className="p-3">
+              <img className="block w-full object-cover h-48" src={link.src} />
               <br />
-              <p>{link.title}</p>
+              <div className="text-lg font-bold">{link.title}</div>
             </Box>
           </LinkExternal>
         ))}
