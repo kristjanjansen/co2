@@ -1,7 +1,9 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useTable } from "react-table";
 import { Button } from "../components/Button";
+import { IconClose } from "../components/IconClose";
 import { IconDownload } from "../components/IconDownload";
+import { Sidebar } from "../components/Sidebar";
 
 export function Table() {
   const data = useMemo(
@@ -39,9 +41,12 @@ export function Table() {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
 
+  const [rowIndex, setRowIndex] = useState(-1);
+
   return (
     <>
       <div className="p-4 bg-gray-100 flex justify-end">
+        {rowIndex > -1 ? JSON.stringify(data[rowIndex]) : ""}
         <Button>
           <div className="flex align-top gap-1">
             <IconDownload className="text-gray-800 w-4 h-4 translate-y-[0.1rem]" />
@@ -68,12 +73,16 @@ export function Table() {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr
+                {...row.getRowProps()}
+                onClick={() => setRowIndex(row.index)}
+                className="group"
+              >
                 {row.cells.map((cell) => {
                   return (
                     <td
                       {...cell.getCellProps()}
-                      className="px-4 py-2 text-sm border border-gray-300"
+                      className="px-4 py-2 text-sm border border-gray-300 group-hover:bg-gray-50 cursor-pointer"
                     >
                       {cell.render("Cell")}
                     </td>
@@ -84,6 +93,16 @@ export function Table() {
           })}
         </tbody>
       </table>
+      {rowIndex > -1 && (
+        <Sidebar>
+          <div className="py-2 px-4 flex justify-between border-gray-200 border-b">
+            <div className="font-bold text-lg">{data[rowIndex].col1}</div>
+            <button onClick={() => setRowIndex(-1)}>
+              <IconClose className="w-6 h-6 p-1 hover:bg-gray-200 rounded" />
+            </button>
+          </div>
+        </Sidebar>
+      )}
     </>
   );
 }
