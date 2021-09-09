@@ -17,6 +17,5 @@ export function useData(sheetId: string, mapper = (m: any) => m) {
     sheetId: import.meta.env.VITE_GOOGLE_SHEETS_ID,
   });
   const data = sheetsData.find(({ id }) => id === sheetId)?.data.map(mapper);
-  console.log(sheetsData);
   return { data, loading, error };
 }

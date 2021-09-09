@@ -28,19 +28,34 @@ export function Index() {
   });
 
   return (
-    <div className="p-4">
-      <div className="grid grid-cols-3 gap-3">
-        {links.map((link, i) => (
-          <LinkExternal key={i} to={link.url} className="block">
-            <Box className="p-3">
-              <img className="block w-full object-cover h-48" src={link.src} />
-              <br />
-              <div className="text-lg font-bold">{link.title}</div>
-            </Box>
-          </LinkExternal>
-        ))}
+    <div className="p-8">
+      <div className="grid grid-cols-[1fr,2fr] gap-8">
+        <div className="grid gap-4 auto-rows-min">
+          {links.map((link, i) => (
+            <LinkExternal key={i} to={link.url} className="block">
+              <Box className="p-3">
+                <img
+                  className="block w-full object-cover h-48"
+                  src={link.src}
+                />
+                <br />
+                <div className="text-lg font-bold">{link.title}</div>
+              </Box>
+            </LinkExternal>
+          ))}
+        </div>
+        <Suggestions />
       </div>
-      {/* <Suggestions /> */}
+      <br />
+      {import.meta.env.VITE_GOOGLE_DS_URL && (
+        <iframe
+          width="1024"
+          height="768"
+          src={import.meta.env.VITE_GOOGLE_DS_URL as string}
+          frameBorder={0}
+          style={{ border: 0 }}
+        />
+      )}
     </div>
   );
 }
