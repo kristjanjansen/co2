@@ -19,6 +19,7 @@ import { Index } from "./pages/Index";
 import { Data } from "./pages/Data";
 import { Styles } from "./pages/Styles";
 import { Embed } from "./pages/Embed";
+import { Table } from "./pages/Table";
 
 export function App() {
   return (
@@ -28,6 +29,7 @@ export function App() {
         <Route path="/data" element={<Data />} />
         <Route path="/styles" element={<Styles />} />
         <Route path="/embed" element={<Embed />} />
+        <Route path="/table" element={<Table />} />
       </Routes>
     </Layout>
   );

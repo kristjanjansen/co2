@@ -7,6 +7,7 @@ export function Tabs() {
     { title: "Index", to: "/" },
     { title: "GDS embed", to: "/embed" },
     { title: "Observable Plot", to: "/data" },
+    { title: "Table", to: "/table" },
   ];
   return (
     <div className="flex border-gray-200 border-b">
