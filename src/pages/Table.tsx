@@ -91,7 +91,7 @@ export default function Table() {
   }
 
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div className="w-full h-[84%]">
       <DataGrid
         rows={rows}
         columns={columns}
