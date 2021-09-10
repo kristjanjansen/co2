@@ -29,13 +29,13 @@ export function Index() {
   });
 
   return (
-    <div className="p-8">
+    <div className="p-8 bg-gray-50">
       <Title>Dashboards</Title>
       <br />
       <div className="grid gap-4 grid-cols-5">
         {links.map((link, i) => (
           <LinkExternal key={i} to={link.url} className="block">
-            <Box className="p-3">
+            <Box className="p-3 bg-white">
               <img className="block w-full object-cover h-32" src={link.src} />
               <br />
               <Heading>{link.title}</Heading>
@@ -46,7 +46,7 @@ export function Index() {
           <Box className="p-3">
             <img className="block w-full object-cover h-32" src="/shift2.png" />
             <br />
-            <Heading>Vehicle mode shift II</Heading>
+            <Heading>Best transport</Heading>
           </Box>
         </Link>
         <Link to="/lanes" className="block">
