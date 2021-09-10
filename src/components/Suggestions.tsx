@@ -32,7 +32,6 @@ export function Suggestions() {
 
   return (
     <div className="grid gap-y-4">
-      <Title>Suggestions</Title>
       {data &&
         data.map((s) => (
           <Box className="grid gap-y-1">

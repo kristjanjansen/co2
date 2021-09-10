@@ -73,6 +73,19 @@ export function Lanes() {
         cellClassName,
         width: 150,
         hide: ["id"].includes(key),
+        renderCell: (cell) =>
+          ["Postal_code_destination"].includes(key) ? (
+            <span
+              className="bg-blue-500 w-full"
+              style={{
+                width: `${parseInt(cell.value.replace(" ", "")) / 1000}px`,
+              }}
+            >
+              {cell.value}
+            </span>
+          ) : (
+            cell.value
+          ),
       }))
     : [];
 
