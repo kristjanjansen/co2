@@ -5,6 +5,7 @@ import { mergeClassLists as merge } from "tailwind-classlist";
 export function Tabs() {
   const tabs = [
     { title: "Dashboard", to: "/" },
+    { title: "Mode analysis", to: "/modes" },
     { title: "Lane emissions", to: "/lanes" },
   ];
   return (

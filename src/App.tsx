@@ -19,19 +19,15 @@ import { Index } from "./pages/Index";
 import { Data } from "./pages/Data";
 import { Transports } from "./pages/Transports";
 import { Lanes } from "./pages/Lanes";
-
-// import { Styles } from "./pages/Styles";
-// import { Embed } from "./pages/Embed";
+import { Modes } from "./pages/Modes";
 
 export function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Index />} />
-        {/* <Route path="/styles" element={<Styles />} /> */}
-        {/* <Route path="/embed" element={<Embed />} /> */}
         <Route path="/lanes" element={<Lanes />} />
-        <Route path="/graphs" element={<Data />} />
+        <Route path="/modes" element={<Modes />} />
       </Routes>
     </Layout>
   );
