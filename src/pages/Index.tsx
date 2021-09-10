@@ -60,7 +60,11 @@ export function Index() {
       <br />
       <Title>Suggestions</Title>
       <br />
-      <Suggestions />
+      <div className="grid grid-cols-[10vw,1fr,10vw]">
+        <br />
+        <Suggestions />
+        <br />
+      </div>
     </div>
   );
 }

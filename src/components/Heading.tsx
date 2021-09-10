@@ -5,7 +5,7 @@ export function Heading(props: { children: any; className?: string }) {
   return (
     <h1
       className={merge(
-        "font-sans text-lg font-semibold text-left text-gray-800",
+        "leading-6 font-sans text-lg font-semibold text-left text-gray-800",
         props.className || ""
       )}
     >
