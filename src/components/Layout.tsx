@@ -14,9 +14,9 @@ export function Layout(props: { children: any }) {
           <Title className="text-4xl font-light">
             CO<sub>2</sub> dashboard
           </Title>
-          <div className="text-white hover:text-gray-500">
+          {/* <div className="text-white hover:text-gray-500">
             {import.meta.env.VITE_CLIENT}
-          </div>
+          </div> */}
           {import.meta.env.VITE_CLIENT && (
             <img
               className="block h-8"

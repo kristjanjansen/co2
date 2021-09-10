@@ -44,25 +44,28 @@ const columns: GridColDef[] = [
   },
 ];
 */
-const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-  { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-  { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-  { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-  { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-  { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-  { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-  { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
-];
+// const rows = [
+//   { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
+//   { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
+//   { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
+//   { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
+//   { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
+//   { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
+//   { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
+//   { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
+//   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
+// ];
 
 export function Lanes() {
   const { data, loading, error } = useData(
     `${import.meta.env.VITE_CLIENT || ""}-lanes`
   );
-
+  console.log(data);
   const rows = data ? data.map((d, id: number) => ({ ...d, id })) : [];
-  const widths = [250, 60, 200, 60, 200, 100, 100, 100, 100, 100];
+  const widths = [
+    250, 200, 200, 50, 100, 200, 50, 100, 200, 50, 150, 150, 150, 150, 150, 150,
+    150, 150, 150,
+  ];
   const columns: GridColDef[] = rows.length
     ? Object.keys(rows[0]).map((key, index) => ({
         field: key,
@@ -75,19 +78,19 @@ export function Lanes() {
         cellClassName,
         width: widths[index],
         hide: ["id"].includes(key),
-        renderCell: (cell) =>
-          ["Postal_code_destination"].includes(key) ? (
-            <span
-              className="bg-blue-500 w-full"
-              style={{
-                width: `${parseInt(cell.value.replace(" ", "")) / 1000}px`,
-              }}
-            >
-              {cell.value}
-            </span>
-          ) : (
-            cell.value
-          ),
+        // renderCell: (cell) =>
+        //   ["Postal_code_destination"].includes(key) ? (
+        //     <span
+        //       className="bg-blue-500 w-full"
+        //       style={{
+        //         width: `${parseInt(cell.value.replace(" ", "")) / 1000}px`,
+        //       }}
+        //     >
+        //       {cell.value}
+        //     </span>
+        //   ) : (
+        //     cell.value
+        //   ),
       }))
     : [];
 
