@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.MuiDataGrid-root {
+  border: none !important;
+}
 .MuiDataGrid-iconSeparator {
   display: none !important;
 }
