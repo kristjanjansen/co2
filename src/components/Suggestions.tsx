@@ -12,7 +12,11 @@ export function Suggestions() {
   const { data, loading, error } = useData("suggestions");
 
   if (loading) {
-    return <Spinner />;
+    return (
+      <div className="p-4 h-1/2 grid place-items-center">
+        <Spinner />
+      </div>
+    );
   }
 
   if (error) {
@@ -35,7 +39,7 @@ export function Suggestions() {
     <div className="grid gap-y-4">
       {data &&
         data.map((s) => (
-          <Box className="grid grid-cols-[auto,2fr,1fr,1fr,1fr] gap-4 p-6">
+          <Box className="bg-white grid grid-cols-[auto,2fr,1fr,1fr,1fr] gap-4 p-6">
             <IconLeaf className="w-8 text-green-500 group-hover:text-blue-600" />
             <div className="grid gap-1 border-r-2 border-gray-200 px-3">
               <Heading>{s.title}</Heading>
@@ -66,7 +70,9 @@ export function Suggestions() {
               <p className="text-gray-500">
                 CO<sub>2</sub> reduction
               </p>
-              <p>...</p>
+              <p className="text-lg font-bold">
+                {(s.impact * 4000000 * 4) / 1000} T/y
+              </p>
             </div>
             {/* <p className="text-sm">
               CO<sub>2</sub> reduction: {s.impact} kg / year
