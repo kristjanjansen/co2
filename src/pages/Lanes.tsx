@@ -57,12 +57,14 @@ const rows = [
 ];
 
 export function Lanes() {
-  const { data, loading, error } = useData("knauf-insulation");
+  const { data, loading, error } = useData(
+    `${import.meta.env.VITE_CLIENT || ""}-lanes`
+  );
 
   const rows = data ? data.map((d, id: number) => ({ ...d, id })) : [];
-
+  const widths = [250, 60, 200, 60, 200, 100, 100, 100, 100, 100];
   const columns: GridColDef[] = rows.length
-    ? Object.keys(rows[0]).map((key) => ({
+    ? Object.keys(rows[0]).map((key, index) => ({
         field: key,
         headerName: key
           .split("_")
@@ -71,7 +73,7 @@ export function Lanes() {
         description: key,
         headerClassName,
         cellClassName,
-        width: 150,
+        width: widths[index],
         hide: ["id"].includes(key),
         renderCell: (cell) =>
           ["Postal_code_destination"].includes(key) ? (
