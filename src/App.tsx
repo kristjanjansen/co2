@@ -18,7 +18,7 @@ import { Layout } from "./components/Layout";
 import { Index } from "./pages/Index";
 import { Data } from "./pages/Data";
 import { Transports } from "./pages/Transports";
-import Table from "./pages/Table";
+import { Lanes } from "./pages/Lanes";
 
 // import { Styles } from "./pages/Styles";
 // import { Embed } from "./pages/Embed";
@@ -30,9 +30,8 @@ export function App() {
         <Route path="/" element={<Index />} />
         {/* <Route path="/styles" element={<Styles />} /> */}
         {/* <Route path="/embed" element={<Embed />} /> */}
-        <Route path="/transports" element={<Transports />} />
+        <Route path="/lanes" element={<Lanes />} />
         <Route path="/graphs" element={<Data />} />
-        <Route path="/table" element={<Table />} />
       </Routes>
     </Layout>
   );

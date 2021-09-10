@@ -56,7 +56,7 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-export default function Table() {
+export function Lanes() {
   const { data, loading, error } = useData("knauf-insulation");
 
   const rows = data ? data.map((d, id: number) => ({ ...d, id })) : [];
