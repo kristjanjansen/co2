@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.MuiDataGrid-root {
+  border: none !important;
+}
+.MuiDataGrid-iconSeparator {
+  display: none !important;
+}
+.MuiDataGrid-cell:focus {
+  outline: none !important;
+}

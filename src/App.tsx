@@ -18,19 +18,16 @@ import { Layout } from "./components/Layout";
 import { Index } from "./pages/Index";
 import { Data } from "./pages/Data";
 import { Transports } from "./pages/Transports";
-
-// import { Styles } from "./pages/Styles";
-// import { Embed } from "./pages/Embed";
+import { Lanes } from "./pages/Lanes";
+import { Modes } from "./pages/Modes";
 
 export function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Index />} />
-        {/* <Route path="/styles" element={<Styles />} /> */}
-        {/* <Route path="/embed" element={<Embed />} /> */}
-        <Route path="/transports" element={<Transports />} />
-        <Route path="/graphs" element={<Data />} />
+        <Route path="/lanes" element={<Lanes />} />
+        <Route path="/modes" element={<Modes />} />
       </Routes>
     </Layout>
   );

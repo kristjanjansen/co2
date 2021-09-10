@@ -11,7 +11,7 @@ export function Layout(props: { children: any }) {
       </div>
       <div>
         <div className="p-4 p-b-0 flex justify-between align-baseline">
-          <Title>
+          <Title className="text-4xl font-light">
             CO<sub>2</sub> dashboard
           </Title>
           {import.meta.env.VITE_CLIENT_IMG && (
