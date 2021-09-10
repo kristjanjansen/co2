@@ -58,6 +58,7 @@ export function Index() {
         </Link>
       </div>
       <br />
+      <br />
       <Title>Suggestions</Title>
       <br />
       <div className="grid grid-cols-[10vw,1fr,10vw]">

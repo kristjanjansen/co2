@@ -37,7 +37,7 @@ export function Suggestions() {
         data.map((s) => (
           <Box className="grid grid-cols-[auto,2fr,1fr,1fr,1fr] gap-4 p-6">
             <IconLeaf className="w-8 text-green-500 group-hover:text-blue-600" />
-            <div className="grid gap-1">
+            <div className="grid gap-1 border-r-2 border-gray-200 px-3">
               <Heading>{s.title}</Heading>
               <p className="text-sm">{s.body}</p>
               <LinkExternal
@@ -61,9 +61,16 @@ export function Suggestions() {
                 {investmentRanks[s.investment].title}
               </p>
             </div>
-            <p className="text-sm">
+            <div className="text-center">
+              <br />
+              <p className="text-gray-500">
+                CO<sub>2</sub> reduction
+              </p>
+              <p>...</p>
+            </div>
+            {/* <p className="text-sm">
               CO<sub>2</sub> reduction: {s.impact} kg / year
-            </p>
+            </p> */}
           </Box>
         ))}
     </div>
