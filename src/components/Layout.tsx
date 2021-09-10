@@ -14,10 +14,10 @@ export function Layout(props: { children: any }) {
           <Title className="text-4xl font-light">
             CO<sub>2</sub> dashboard
           </Title>
-          {import.meta.env.VITE_CLIENT_IMG && (
+          {import.meta.env.VITE_CLIENT && (
             <img
               className="block h-8"
-              src={String(import.meta.env.VITE_CLIENT_IMG) || ""}
+              src={`${String(import.meta.env.VITE_CLIENT) || ""}.png`}
             />
           )}
         </div>
