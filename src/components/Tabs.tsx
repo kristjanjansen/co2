@@ -1,16 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { mergeClassLists as merge } from "tailwind-classlist";
+import { links } from "../utils";
 
 export function Tabs() {
-  const tabs = [
-    { title: "Overview", to: "/" },
-    { title: "Best transport", to: "/modes" },
-    { title: "Lane emissions", to: "/lanes" },
-  ];
   return (
     <div className="flex border-gray-200 border-b">
-      {tabs.map(({ title, to }, i) => (
+      {[{ title: "Index", key: "" }, ...links].map(({ title, key }, i) => (
         <NavLink
           end
           className={({ isActive }) =>
@@ -19,7 +15,7 @@ export function Tabs() {
               isActive ? "border-blue-500 text-gray-900" : ""
             )
           }
-          to={to}
+          to={`/${key}`}
           key={i}
         >
           {title}

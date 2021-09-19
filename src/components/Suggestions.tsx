@@ -38,8 +38,11 @@ export function Suggestions() {
   return (
     <div className="grid gap-y-4">
       {data &&
-        data.map((s) => (
-          <Box className="bg-white grid grid-cols-[auto,2fr,1fr,1fr,1fr] gap-4 p-6">
+        data.map((s, i) => (
+          <Box
+            key={i}
+            className="bg-white grid grid-cols-[auto,2fr,1fr,1fr,1fr] gap-4 p-6"
+          >
             <IconLeaf className="w-8 text-green-500 group-hover:text-blue-600" />
             <div className="grid gap-1 border-r-2 border-gray-200 px-3">
               <Heading>{s.title}</Heading>

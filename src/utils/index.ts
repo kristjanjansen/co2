@@ -19,3 +19,26 @@ export function useData(sheetId: string, mapper = (m: any) => m) {
   const data = sheetsData.find(({ id }) => id === sheetId)?.data.map(mapper);
   return { data, loading, error };
 }
+
+export const links = [
+  {
+    key: "summary",
+    title: "Summary",
+  },
+  {
+    key: "emissions",
+    title: "Emissions",
+  },
+  {
+    key: "typeshift",
+    title: "Vehicle type shift",
+  },
+  {
+    key: "lanes",
+    title: "Lane emissions",
+  },
+  {
+    key: "pricing",
+    title: "Cost of emissions",
+  },
+];
