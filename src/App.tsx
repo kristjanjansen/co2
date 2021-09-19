@@ -19,17 +19,21 @@ import { Index } from "./pages/Index";
 import { Data } from "./pages/Data";
 import { Transports } from "./pages/Transports";
 import { Lanes } from "./pages/Lanes";
-import { Modes } from "./pages/Modes";
+import { Shift } from "./pages/Shift";
 import { Emissions } from "./pages/Emissions";
+import { Summary } from "./pages/Summary";
+import { Pricing } from "./pages/Pricing";
 
 export function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/summary" element={<Summary />} />
         <Route path="/emissions" element={<Emissions />} />
+        <Route path="/typeshift" element={<Shift />} />
         <Route path="/lanes" element={<Lanes />} />
-        <Route path="/modes" element={<Modes />} />
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
     </Layout>
   );
