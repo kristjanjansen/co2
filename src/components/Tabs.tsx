@@ -6,7 +6,7 @@ import { links } from "../utils";
 export function Tabs() {
   return (
     <div className="flex border-gray-200 border-b">
-      {links.map(({ title, key }, i) => (
+      {[{ title: "Index", key: "" }, ...links].map(({ title, key }, i) => (
         <NavLink
           end
           className={({ isActive }) =>
