@@ -20,7 +20,7 @@ export function Layout(props: { children: any }) {
           {import.meta.env.VITE_CLIENT && (
             <img
               className="block h-8"
-              src={`${String(import.meta.env.VITE_CLIENT) || ""}.png`}
+              src={`${String(import.meta.env.VITE_CLIENT) || ""}-logo.png`}
             />
           )}
         </div>
