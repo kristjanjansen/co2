@@ -7,6 +7,7 @@ import { IconLeaf } from "./IconLeaf";
 import { LinkExternal } from "./LinkExternal";
 import { Spinner } from "./Spinner";
 import { Title } from "./Title";
+import { format } from "d3-format";
 
 export function Suggestions() {
   const { data, loading, error } = useData("suggestions");
@@ -23,13 +24,13 @@ export function Suggestions() {
     return <div>{JSON.stringify(error)}</div>;
   }
 
-  const impactRanks = {
+  const impactRanks: any = {
     1: { title: "Low", class: "text-red-500 text-xl font-bold" },
     2: { title: "Medium", class: "text-orange-500 text-xl font-bold" },
     3: { title: "High", class: "text-green-500 text-xl font-bold" },
   };
 
-  const investmentRanks = {
+  const investmentRanks: any = {
     1: { title: "Low", class: "text-green-500 text-lg font-bold" },
     2: { title: "Medium", class: "text-orange-500 text-lg font-bold" },
     3: { title: "High", class: "text-red-500 text-lg font-bold" },
@@ -74,12 +75,9 @@ export function Suggestions() {
                 CO<sub>2</sub> reduction
               </p>
               <p className="text-lg font-bold">
-                {(s.impact * 4000000 * 4) / 1000} T/y
+                {format(",")((s.impact * 4000000 * 4) / 1000)} T/y
               </p>
             </div>
-            {/* <p className="text-sm">
-              CO<sub>2</sub> reduction: {s.impact} kg / year
-            </p> */}
           </Box>
         ))}
     </div>

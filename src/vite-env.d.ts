@@ -8,4 +8,5 @@ interface ImportMetaEnv {
 
 declare module "@observablehq/plot";
 declare module "d3-dsv";
+declare module "d3-format";
 declare module "tailwind-classlist";

@@ -16,8 +16,6 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Layout } from "./components/Layout";
 
 import { Index } from "./pages/Index";
-import { Data } from "./pages/Data";
-import { Transports } from "./pages/Transports";
 import { Lanes } from "./pages/Lanes";
 import { Shift } from "./pages/Shift";
 import { Emissions } from "./pages/Emissions";
