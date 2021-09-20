@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Title } from "../components/Title";
 
 export function Shift() {
@@ -7,11 +7,6 @@ export function Shift() {
   return (
     <div className="p-4 grid gap-4 auto-rows-min">
       <Title>Vehicle type shift</Title>
-      {/* <input
-        className="border-gray-500 p-2 border text-sm"
-        value={src as string}
-        onChange={(e) => setSrc(e.target.value)}
-      /> */}
       <img src={`/${client}-typeshift.png`} />
       <iframe
         width="1024"
